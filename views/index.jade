@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  div.container
+    .col-md-8
+      div.page-header
+        h1 KidStartNow Lucky Draw
+      form(name='userForm', ng-controller='FormCtrl', ng-submit='submitForm(userForm.$valid)', novalidate)
+        div.form-group(ng-class='{"has-error": userForm.name.$invalid && submitted}')
+          label *Parent's Name:
+          input.form-control(type='text', name='name', placeholder='Enter your name...', ng-model='user.parentName', required)
+          p.help-block(ng-show='userForm.name.$invalid && submitted') Your name is required
+
+        div.form-group(ng-class='{"has-error": userForm.number.$invalid && submitted}')
+          label *Contact Number:
+          input.form-control(type='text', name='number', placeholder='Enter your contact number...', ng-model='user.number', ng-pattern='pattern', required)
+          p.help-block(ng-show='userForm.number.$invalid && submitted') Invalid contact number
+
+        div.page-header
+          h4 Optional
+
+        div.checkbox
+          label 
+            input(type='checkbox', ng-model='user.interestedEnrichment') 
+            | I'm interested in KidStartNow's Chinese Enrichment classes
+        
+        div.checkbox
+          label 
+            input(type='checkbox', ng-model='user.interestedStorybooks') 
+            | I'm interested in KidStartNow's Animated Storybooks
+
+        div.form-group(ng-if='user.interestedEnrichment || user.interestedStorybooks', ng-class='{"has-error": userForm.kidsAge.$invalid && submitted}')
+          label How old are your kids?
+          textarea.form-control(name='kidsAge', ng-model='user.kidsAge', required)
+          p.help-block(ng-show='userForm.kidsAge.$invalid && submitted') Please enter how old your kids are.
+
+        button.btn.btn-primary(type='submit') Enter Lucky Draw
+
+
+  script(src='/libraries/angular/angular.min.js')
+  script(src='/javascripts/app.js')

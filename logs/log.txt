@@ -1,8 +1,3 @@
-{"parentName":"Dan Tang","number":"98207272"}
-{"parentName":"Dan Tang","number":"98207272","interestedEnrichment":true,"kidsAge":"Young child"}
-{"parentName":"Pamela","number":"97316420","interestedEnrichment":true,"kidsAge":"none"}
-{"parentName":"pamela","number":"99999988"}
-{"parentName":"Pamela","number":"98207272"}
-{"parentName":"Tom","number":"97584150","interestedStorybooks":true,"kidsAge":"7 and 8","created":"2014-03-11T16:34:17.596Z"}
-{"parentName":"Dan Tang","number":"98207272","created":"2014-03-11T16:36:44.659Z"}
-{"parentName":"pam","number":"97316420","created":"2014-03-11T16:37:08.758Z"}
+{"parentName":"Pamela Tang","email":"pam.tang@kidstartnow.com","number":"97316420","created":"2014-03-13T06:40:09.142Z"}
+{"parentName":"Waine Chan","email":"wain@example","number":"99988822","interestedProblemSolving":true,"kidsAge":"4 and 6","created":"2014-03-13T06:43:35.376Z"}
+{"parentName":"waine","number":"98207272","email":"wain.chan@kidstartnow.com","created":"2014-03-13T06:44:13.954Z"}

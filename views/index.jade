@@ -2,14 +2,21 @@ extends layout
 
 block content
   div.container
-    .col-md-8
-      div.page-header
+    .col-lg-6.col-lg-offset-3
+      div.page-header.center
+        img.logo(src='/images/kidstartnow-whiteBG.png')
         h1 KidStartNow Lucky Draw
       form(name='userForm', ng-controller='FormCtrl', ng-submit='submitForm(userForm.$valid)', novalidate)
         div.form-group(ng-class='{"has-error": userForm.name.$invalid && submitted}')
           label *Parent's Name:
           input.form-control(type='text', name='name', placeholder='Enter your name...', ng-model='user.parentName', required)
           p.help-block(ng-show='userForm.name.$invalid && submitted') Your name is required
+
+        div.form-group(ng-class='{"has-error": userForm.email.$invalid && submitted}')
+          label *Email:
+          input.form-control(type='email', name='email', placeholder='Enter your email address...', ng-model='user.email', required)
+          p.help-block(ng-show='userForm.email.$invalid && submitted') Invalid email address
+
 
         div.form-group(ng-class='{"has-error": userForm.number.$invalid && submitted}')
           label *Contact Number:
@@ -26,15 +33,24 @@ block content
         
         div.checkbox
           label 
+            input(type='checkbox', ng-model='user.interestedProblemSolving') 
+            | I'm interested in KidStartNow's Problem Solving classes
+
+        div.checkbox
+          label 
             input(type='checkbox', ng-model='user.interestedStorybooks') 
             | I'm interested in KidStartNow's Animated Storybooks
 
-        div.form-group(ng-if='user.interestedEnrichment || user.interestedStorybooks', ng-class='{"has-error": userForm.kidsAge.$invalid && submitted}')
+        div.form-group(ng-if='user.interestedEnrichment || user.interestedStorybooks || user.interestedProblemSolving', ng-class='{"has-error": userForm.kidsAge.$invalid && submitted}')
           label How old are your kids?
           textarea.form-control(name='kidsAge', ng-model='user.kidsAge', required)
           p.help-block(ng-show='userForm.kidsAge.$invalid && submitted') Please enter how old your kids are.
 
-        button.btn.btn-primary(type='submit') Enter Lucky Draw
+        p.small 
+          em Participation in KidStartNow's lucky draw indicates agreement to be contacted about offers
+        br
+        div.center
+          button.btn.btn-primary(type='submit') Enter Lucky Draw
 
 
   script(src='/libraries/angular/angular.min.js')

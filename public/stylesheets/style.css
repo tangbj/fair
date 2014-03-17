@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
+  padding: 0 50px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.logo {
+  width: 100px;
+}
+
+.center {
+  text-align: center !important;
 }
